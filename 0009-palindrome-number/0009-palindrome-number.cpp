@@ -1,12 +1,21 @@
 class Solution {
 public:
     bool isPalindrome(int x) {
-        string strX = to_string(x);
+        vector<int> xDigits;
 
-        string reversedStrX = strX;
-        reverse(reversedStrX.begin(), reversedStrX.end());
+        if (x < 0) {
+            return false;
+        }
+ 
+        while (x > 0) {
+            xDigits.push_back(x % 10);
+            x /= 10;
+        }
 
-        if (strX == reversedStrX) {
+        vector<int> reversedXDigits = xDigits;
+        reverse(reversedXDigits.begin(), reversedXDigits.end());
+
+        if (reversedXDigits == xDigits) {
             return true;
         }
 
