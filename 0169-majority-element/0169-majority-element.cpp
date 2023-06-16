@@ -11,9 +11,9 @@ public:
             auto it = Map.find(nums[i]);
 
             if (it != Map.end()) {
-            it->second++;
+                it->second++;
             } else {
-            Map.emplace(nums[i], 1);
+                Map.emplace(nums[i], 1);
             }
         }
 
@@ -22,7 +22,7 @@ public:
 
         for (; itCurrent != Map.cend(); itCurrent++) {
             if (itMax->second <= itCurrent->second) {
-            itMax = itCurrent;
+                itMax = itCurrent;
             }
         }
 
