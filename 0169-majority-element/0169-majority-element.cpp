@@ -18,10 +18,6 @@ public:
             }
         }
 
-        for (auto it = Map.cbegin(); it != Map.cend(); it++) {
-            cout << it->first << it->second << " ";
-        }
-
         auto itCurrent = Map.cbegin();
         auto itMax = itCurrent;
 
@@ -34,3 +30,5 @@ public:
         return itMax->first;
     }
 };
+
+// Time complexity - O(n)
