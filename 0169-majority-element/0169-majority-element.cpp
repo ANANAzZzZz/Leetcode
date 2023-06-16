@@ -5,7 +5,6 @@ public:
         int maxCount;
         int n;
 
-        maxCount = 0;
         n = nums.size();
 
         for (int i = 0; i < n; i++) {
