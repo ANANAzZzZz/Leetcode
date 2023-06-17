@@ -1,25 +1,37 @@
+// two pointer solution
+
 class Solution {
 public:
     bool isPalindrome(string s) {
-        string nonSymbolLine;
-        string reversedS;
-     
-        for (int i = 0; i < s.length(); i++) {
-              s[i] = tolower(s[i]);
+        int i = 0;
+        int j = s.length() - 1;
 
-              if ((s[i] >= 'a' && s[i] <= 'z') || (s[i] >= '0' && s[i] <= '9')) {
-                  nonSymbolLine.push_back(s[i]);
-              }
-        } 
+        while (i < j) {
+            s[i] = tolower(s[i]);
+            s[j] = tolower(s[j]);
 
-        reversedS = nonSymbolLine;
-        reverse(reversedS.begin(), reversedS.end());
-        
-        if (nonSymbolLine == reversedS) {
-            return true;
-        } else {
-            return false;
+            if (isValidSymbol(s[i])) {
+                if (isValidSymbol(s[j])) {
+                    if (s[i] == s[j]) {
+                        i++;
+                        j--;
+                        } else {
+                        return false;
+                    }
+                } else {
+                    j--;
+                }
+            } else {
+            i++;
+            }
         }
+        return true;
+    }
+    bool isValidSymbol (char symbol) {
+        if ((symbol >= 'a' && symbol <= 'z') || (symbol >= '0' && symbol <= '9')) {
+            return true;
+        }
+        return false;
     }
 };
 
