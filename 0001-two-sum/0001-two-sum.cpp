@@ -10,7 +10,7 @@ public:
                 answer.push_back(i);
                 answer.push_back(j);
 
-            return answer;
+                return answer;
             } else {
                 j++;
             }
@@ -19,6 +19,9 @@ public:
                 j = i + 1;
              }
          }
-         return answer;
+        return answer;
     }
 };
+
+// Time complexity - O(n^2)
+// Space complexity - O(1)
