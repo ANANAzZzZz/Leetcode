@@ -23,11 +23,7 @@ public:
           }
         }
       }
-
-      if (stS == stT) {
-        return true;
-      }
-      return false;
+      return stS==stT;
     }
 };
 
