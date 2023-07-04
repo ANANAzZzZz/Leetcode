@@ -1,27 +1,20 @@
+// hashmap solution
+
 class Solution {
 public:
     vector<int> twoSum(vector<int>& nums, int target) {
-        int i = 0;
-        int j = 1;
-        vector<int> answer;
+        unordered_map<int, int> map;
 
-        while (i < j) {
-            if ((nums[i] + nums[j]) == target) {
-                answer.push_back(i);
-                answer.push_back(j);
-
-                return answer;
+        for (int i = 0; i < nums.size(); i++) {
+            if (map.find(target - nums[i]) != map.end()) {
+                return {i, map[target - nums[i]]};
             } else {
-                j++;
+                map[nums[i]] = i;
             }
-            if (j == nums.size()) {
-                i++;
-                j = i + 1;
-             }
-         }
-        return answer;
+        }
+        return {};
     }
 };
 
-// Time complexity - O(n^2)
-// Space complexity - O(1)
+// Time complexity - O(n)
+// Space complexity - O(n)
