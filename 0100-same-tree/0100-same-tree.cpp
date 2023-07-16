@@ -28,6 +28,7 @@ public:
         while (!Queue.empty()) {
             TreeNode* Pnode = Queue.front();
             Queue.pop();
+            
             TreeNode* Qnode = Queue.front();
             Queue.pop();
             
