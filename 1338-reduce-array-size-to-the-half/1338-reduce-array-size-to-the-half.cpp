@@ -12,8 +12,8 @@ public:
             map[num]++;
         }
 
-        for (auto i : map) {
-            pq.push(i.second);
+        for (auto it = map.begin(); it != map.end(); it++) {
+            pq.push(it->second);
         }
 
         for (int i = 0; i < n; i++) {
