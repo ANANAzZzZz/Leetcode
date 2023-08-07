@@ -2,7 +2,6 @@ class Solution {
 public:
     int minStartValue(vector<int>& nums) {
         vector<int> prefix = {nums[0]};
-        int startValue = 1;
         int minValue = prefix[0];
 
         for (int i = 1; i < nums.size(); i++) {
