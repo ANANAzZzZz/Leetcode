@@ -6,19 +6,17 @@ public:
         int r = n - 1;
 
         while (l < r) {
-            if (isLetter(s[l])) {
-                if (isLetter(s[r])) {
-                    char tmp = s[r];
-                    s[r] = s[l];
-                    s[l] = tmp;
-                    
-                    l++;
-                    r--;
-                } else {
-                    r--;
-                }
-            } else {
+            if (!isLetter(s[l])) {
                 l++;
+            } else if (!isLetter(s[r])) {
+                r--;
+            } else {
+                char tmp = s[r];
+                s[r] = s[l];
+                s[l] = tmp;
+
+                l++;
+                r--;
             }
         }
 
