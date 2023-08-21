@@ -11,20 +11,20 @@ public:
         }
 
         for (auto& player : losers) {
+            winners.erase(player.first);
+
             if (player.second == 1) {
                 ans[1].push_back(player.first);
             }
         }
 
         for (auto& player : winners) {
-            if (losers.find(player) == losers.end()) {
-                ans[0].push_back(player);
-            }
+            ans[0].push_back(player);
         }
 
         return ans;
     }
 };
 
-// Time complexity - O(n), where n - length of matches
+// Time complexity - O(n * log(n)), where n - length of matches
 // Space complexity - O(n)
