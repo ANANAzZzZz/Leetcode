@@ -5,9 +5,7 @@ public:
 
         for (auto& num: nums) {
             counts[num]++;
-        }
 
-        for (auto& num: nums) {
             if (counts[num] >= 2) {
                 return true;
             }
