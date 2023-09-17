@@ -8,16 +8,20 @@
  *     ListNode(int x, ListNode *next) : val(x), next(next) {}
  * };
  */
-
 class Solution {
 public:
     ListNode* deleteDuplicates(ListNode* head) {
-        for (ListNode* curr = head; curr != nullptr; curr = curr->next) {
-            while (curr->next != nullptr && curr->val == curr->next->val) {
-                ListNode* toDelete = curr->next;
+        if (!head) {
+            return nullptr;
+        }
+        
+        for (ListNode* curr = head; curr->next; curr = curr->next) {
+            while (curr->val == curr->next->val) {
+                if (!curr->next->next) {
+                    curr->next = nullptr;
+                    return head;
+                }
                 curr->next = curr->next->next;
-
-                delete(toDelete);
             }
         }
         return head;
@@ -25,4 +29,4 @@ public:
 };
 
 // Time complexity - O(n^2)
-// Space complexity - O(n)
+// Space complexity - O(1)
