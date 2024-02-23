@@ -12,17 +12,13 @@ public:
         vector<vector<int>> ans = {{1}, {1, 1}};
 
         for (int i = 0; i < numRows - 2; i++) {
-            vector<int> currArr = ans.back();
             vector<int> newArr = {1};
 
             int l = 0;
             int r = 1; 
             
-            for (int j = 0; j < currArr.size() - 1; j++) {
-                int currSum = 0;
-                currSum += currArr[l] + currArr[r];
-                
-                newArr.push_back(currSum);
+            for (int j = 0; j < ans.back().size() - 1; j++) {
+                newArr.push_back(ans.back()[l] + ans.back()[r]);
                 
                 l++;
                 r++;
